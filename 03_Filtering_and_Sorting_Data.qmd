@@ -1,6 +1,6 @@
 ---
 title: "Intro to Data Analysis in R - Sorting and Filtering"
-author: "Aaron Kessler"
+author: "Your Name"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
