@@ -1,3 +1,13 @@
+---
+title: "Mutating - From Elections Book"
+author: ""
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+format:
+  html:
+    self-contained: true
+---
+
+
 # Mutating data
 
 Often the data you have will prompt questions that it doesn't immediately answer. The PPP loan applications include a total amount column but also columns for different categories the money would be used for: payroll, utilities, rent, etc. Amounts are great, but comparing absolute numbers to each other is only useful if you have a very small number. We need percentages!

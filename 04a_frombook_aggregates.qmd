@@ -1,4 +1,11 @@
-# Aggregates
+---
+title: "Aggregates - From Elections Book"
+author: ""
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+format:
+  html:
+    self-contained: true
+---
 
 ## Libraries
 
