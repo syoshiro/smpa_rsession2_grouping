@@ -38,7 +38,8 @@ primary_18 %>%
     ) %>%
   mutate(
   percent_election_day = election_day/votes
-    )
+    ) %>% 
+  View ()
 ```
 
 Now we've got our `percent_election_day` column. But what do you see right away? Do those numbers look like we expect them to? No. They're a decimal expressed as a percentage. So let's fix that by multiplying by 100.

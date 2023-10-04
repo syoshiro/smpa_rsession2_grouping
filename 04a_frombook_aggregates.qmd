@@ -138,7 +138,15 @@ Here's the code to count the number of contributions to each recipient:
 ```{r}
 maryland_winred_contributions %>%
   group_by(memo_text) %>%
-  summarise(count_contribs = n())
+  summarise(count_contribs = n()) %>% 
+  arrange(desc(count_contribs)) %>% 
+  head(5)
+
+maryland_winred_contributions %>%
+  group_by(city) %>%
+  summarise(count_contribs = n()) %>% 
+  arrange(desc(count_contribs)) %>% 
+  head(5)
 ```
 
 So let's walk through that.
@@ -183,7 +191,7 @@ Let's say we wanted to know the total dollar amount of contributions to each rec
 
 ```{r}
 maryland_winred_contributions %>%
-  group_by(memo_text) %>%
+  group_by(city) %>%
   summarise(
     count_contribs = n(),
     total_amount = sum(amount)
@@ -202,7 +210,8 @@ maryland_winred_contributions %>%
     mean_amount = mean(amount),
     median_amount = median(amount)
   ) %>%
-  arrange(desc(count_contribs))
+  arrange(desc(count_contribs)) %>% 
+  View()
 ```
 
 We see something interesting here. The mean contribution amount is higher than the median amount in most cases, but the difference isn't huge. In some cases the mean gets skewed by larger amounts. Examining both the median -- which is less sensitive to extreme values -- and the mean -- which is more sensitive to extreme values -- gives you a clearer picture of the composition of the data.
@@ -220,7 +229,11 @@ maryland_winred_contributions %>%
     min_amount = min(amount),
     max_amount = max(amount)
   ) %>%
-  arrange(desc(max_amount))
+  filter(
+    max_amount < 1000
+  ) %>% 
+  arrange(desc(max_amount)) %>% 
+  View()
 ```
 
 From this, we can see that some committees focus on small-dollar donors while others ask for (and get) larger amounts. This pattern isn't random: campaigns make choices about how they will raise money.
