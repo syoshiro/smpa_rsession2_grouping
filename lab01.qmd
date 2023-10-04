@@ -1,6 +1,6 @@
 ---
 title: "Lab 01 - Grouping/Filtering"
-author: "Your Name Here"
+author: Paulina Lopez, Sophie Holtzman, Sarina Oshiro
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
